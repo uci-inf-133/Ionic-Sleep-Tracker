@@ -1,0 +1,51 @@
+.sleepinessPage {
+  --background: none;
+  background-image: url("/assets/IMG_0221.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+// .sleepMeter {
+//   background-color: transparent !important;
+//   font-weight: bold;
+// }
+
+ion-item, ion-range, ion-toolbar, ion-footer {
+  --ion-background-color: transparent !important;
+}
+// ion-range{
+//   position: absolute;
+//   bottom: 0px
+// }
+.date {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.sleepMeter {
+  --bar-height: 8px;
+  --height: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+ion-range::part(tick){
+    height: 10px;
+    width: 5px;
+    border-radius: 0%;
+}
+
+.input {
+  padding: 1rem;
+}
+
+
+.pos {
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.scale {
+  font-size: 1.5rem;
+}

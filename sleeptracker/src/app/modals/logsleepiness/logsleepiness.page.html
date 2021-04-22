@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Log Sleepiness</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <!-- <ion-icon name="close-circle-outline"></ion-icon> -->Submit
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='sleepinessPage'>
+  <ion-item class="date">
+    <ion-label>Date</ion-label>
+    <ion-datetime display-timezone="pst" displayFormat="MM/DD/YYYY " min="2020" max="2021" [(ngModel)]="loggedAt" placeholder="select a date"></ion-datetime>
+  </ion-item>
+  <!-- <ion-text>
+    <p>Sleepiness:</p>
+    <p *ngIf="this.selected">{{this.sleepiness.summaryString()}}</p>
+  </ion-text>
+  <ion-button size="large" (click)="showPicker()">
+        Sleepiness Picker
+  </ion-button> -->
+  <div class="input">
+    <div>
+      <h2>How sleepy are you?</h2>
+    </div>
+    <div class="">
+      <ion-range class="sleepMeter" [(ngModel)]="position" (ngModelChange)="rangeChanged()" min="1" max="7" step="1" snaps="true" ticks="true" pin="true" color="primary">
+        <ion-label slot="start">1</ion-label>
+        <ion-label slot="end">7</ion-label>
+      </ion-range>
+    </div>
+    <div class="">
+      <h1 class="pos">{{position}}</h1>
+      <p class="scale">{{sleepScale}}</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+</ion-content>

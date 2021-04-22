@@ -1,20 +1,64 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+<ion-header [translucent]="true" >
+  <ion-toolbar color = "secondary">
     <ion-title>
       Sleep Tracker
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Sleep Tracker</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-content" [fullscreen]="true" >
+     <div class= "time">
+       <h2>Hello! It is now</h2>
+       <p>{{today | date:'HH:mm a'}}</p>
+       <h3>How do you feel today?</h3>
+     </div> 
+     <ion-grid class="grid">
+      <ion-row>
+        <ion-col class= "col" col-6 size = "6">
+          <ion-card class = 'ion-card-button' (click)="passSleep()" color = 'tertiary'>
+            <ion-card-header>
+              <ion-card-title class="logSleepButton">Log Sleep</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <!-- <ion-button class = "logSleepButton" size = "medium" shape="round" (click)="passSleep()" color="primary" expand="full">Log Sleep</ion-button> -->
+        </ion-col>
+        <ion-col class= "col" col-6 size = "6">
+          <ion-card class = 'ion-card-button' (click)="passSleepiness()" color = 'tertiary'>
+            <ion-card-header>
+              <ion-card-title class="logSleepinessButton">Sleepiness</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <!-- <ion-button class = "logSleepinessButton" size = "medium" shape="round" (click)="passSleepiness()" expand="full">Log Sleepiness</ion-button> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>
+
+<ion-content class='cont2'>
+      <ion-infinite-scroll threshold="100px">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+          <!-- <ion-text *ngFor="let sleep of allSleepData">
+            <p>{{sleep.summaryString()}}</p>
+          </ion-text> -->
+     
+          <ion-card *ngFor="let sleep of allSleepData" color = "secondary">
+           <ion-card-header>
+             <ion-card-subtitle>{{sleep.titleString}}</ion-card-subtitle>
+             <ion-card-title>{{sleep.summaryString()}}</ion-card-title>
+           </ion-card-header>
+     
+           <ion-card-content>
+             {{sleep.dateString()}}
+           </ion-card-content>
+         </ion-card>
+     
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer class = 'ion-footer'>
+  
+</ion-footer>

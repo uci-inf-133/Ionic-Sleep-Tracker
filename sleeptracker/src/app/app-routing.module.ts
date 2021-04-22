@@ -4,12 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'logsleep',
+    loadChildren: () => import('./modals/logsleep/logsleep.module').then( m => m.LogsleepPageModule)
+  },
+  {
+    path: 'logsleepiness',
+    loadChildren: () => import('./modals/logsleepiness/logsleepiness.module').then( m => m.LogsleepinessPageModule)
   },
 ];
 

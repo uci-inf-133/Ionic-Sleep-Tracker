@@ -3,11 +3,14 @@ import { SleepData } from './sleep-data';
 export class OvernightSleepData extends SleepData {
 	private sleepStart:Date;
 	private sleepEnd:Date;
+	public titleString:String;
 
 	constructor(sleepStart:Date, sleepEnd:Date) {
 		super();
 		this.sleepStart = sleepStart;
 		this.sleepEnd = sleepEnd;
+		this.sortDate = sleepStart;
+		this.titleString = "Overnight Sleep"
 	}
 
 	summaryString():string {
@@ -16,9 +19,9 @@ export class OvernightSleepData extends SleepData {
 
 		// Calculate the difference in milliseconds
 		var difference_ms = sleepEnd_ms - sleepStart_ms;
-		    
+
 		// Convert to hours and minutes
-		return Math.floor(difference_ms / (1000*60*60)) + " hours, " + Math.floor(difference_ms / (1000*60) % 60) + " minutes.";
+		return Math.floor(difference_ms / (1000*60*60)) + " hours, " + Math.floor(difference_ms / (1000*60) % 60) + " minutes";
 	}
 
 	dateString():string {

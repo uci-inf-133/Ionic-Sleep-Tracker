@@ -25,3 +25,68 @@
 #container a {
   text-decoration: none;
 }
+
+.time {
+  font-family: 'Comfortaa';
+  font-size: 34px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.ion-footer {
+background-color: currentColor;}
+
+.ion-content{
+  height: 50% !important;
+  display:block;
+}
+
+.logSleepButton{
+  font-family: 'Comfortaa';
+  font-size: 12px;
+}
+
+.logSleepButton:hover{
+  cursor: pointer;
+}
+
+.logSleepinessButton:hover{
+  cursor: pointer;
+}
+
+.logSleepinessButton{
+  font-family: 'Comfortaa';
+  font-size: 12px;
+}
+
+.ion-card-button{
+  width: 90% !important;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.col{
+  width: 100px;
+  margin-left: 0%;
+}
+
+.grid{
+  margin-left: 0%;
+}
+
+.ion-content{
+  --background: none;
+    background-image: url('/assets/IMG_0223.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cont2{
+  --background: none;
+    background-image: url('/assets/IMG_0222.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
